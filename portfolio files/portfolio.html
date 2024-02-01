@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="enhance.css">
+    <title>PORTFOLIO</title>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/LOGO.png" class="LOGO">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+            <p>WEB DEVELOPER</p>
+            <h1>Hi,I'm <span>Anushree<br> Bajaj</span> from India.</h1>
+        </div>
+        </div>
+    </div>
+   <! -----------------ABOUT--------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+        
+                <div class="about-col-2">
+                    <h1 class="sub-title">ABOUT ME</h1>
+                    <p>HEY THERE! I'M ANUSHREE BAJAJ, A DEDICATED COMPUTER SCIENCE ENGINEERING STUDENT WITH A 
+                       PASSION FOR CODING.MY JOURNEY IN ACADEMIA HAS BEEN FUELED BY A CURIOSITY TO EXPLORE THE
+                       INTERSECTION OF COMPUTER SCIENCE WITH WEB DEVELOPMENT. WHETHER I'M IMMERSED IN CODING OR 
+                       DELVING INTO COMPUTER SCIENCE RESEARCH, I THRIVE ON CHALLENGE OF TURNING IDEAS INTO
+                       TANGIBLE SOLUTIONS.<br>
+                       BEYOND THE CLASSROOM, I LOVE COOKING, DANCING, TRAVELLING AND ART, WHERE I OFTEN FOUND 
+                       INSPIRATION THAT FUELS MY CREATIVITY AND PROBLEM SOLVING MINDSET.THROUGH MY EXPERIENCES
+                       I,VE CULTIVATED STRONG FOUNDATION IN CRITICAL THINKING,COLLABORATION,TEAMWORK AND 
+                       CONTINUOUS LEARNING.
+                    </p>
+                    <div class="column-3a">
+                       <h2><span>EDUCATION</span></h2>
+                       <table class="table-style">
+                        <tr>
+                            <td> SSC FROM BHANDARA</td>
+                            <td> </td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>HSC FROM  BHANDARA</td>
+                            <td> </td>
+                            <td>2022</td>
+                        </tr>
+                        <tr>
+                            <td>B.TECH FROM GCoEN</td>
+                            <td> </td>
+                            <td>2022-CURRENT</td>
+                        </tr>
+                       </table>
+                    </div>
+                    <div class="column-3a">
+                       <h2><span>SKILLS</span></h2>
+                       <table class="table-style">
+                        <tr>
+                            <td>WEB DEVELOPMENT</td>
+                        </tr>
+                        <tr>
+                            <td>JAVA</td>
+                        </tr>
+                        <tr>
+                            <td>C,C++</td>
+                        </tr>
+                       </table>
+                    </div>
+                </div>
+              </div>          
+             </div>       
+    </div> 
+   <! ---------------------services--------------------->
+   <div id="Contact">
+     <div class="container">
+         <div class="row">
+            <div class="contact-left">
+               <h1 class="sub-title">Contact Me</h1>
+               <p><i class="fas fa-paper-plane"></i>anushreebajaj283@gmail.com</p>
+                
+               <div class="social-icons">
+                     <a href="https://www.linkedin.com/in/anushree-bajaj-964b9a276?utm" ><i class="fab fa-linkedin"></i></a>
+                     <a href=""><i class="fab fa-facebook"></i></a>
+                     <a href=""><i class="fab fa-twitter"></i></a>
+                       <a href=""><i class="fab fa-instagram"></i></a>
+               </div>
+               <a href="Anushree _Resume_432.pdf" class="btn btn2" >DOWNLOAD RESUME</a>
+           </div>
+         <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your MESSAGE"></textarea>
+                <button type="submit" class="btn btn2">SUBMIT</button>
+            </form>
+            <span id="msg"></span>
+         </div>
+       </div>
+     </div>
+     <div class="copyright">
+        <p>2024 Anushree.All rights are reserved. </p>
+     </div>
+ </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz392vlND_ssSwOd_Mzdg6-cb9DjHh-bim4PdKcT7YLisLDZYO0Nse7kTZY1JrPlFYAjQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function()
+            msg.innerHTML=""
+            )
+        },5000)
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+
+</body>
+</html>
+
